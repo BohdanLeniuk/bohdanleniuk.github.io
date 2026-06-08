@@ -106,6 +106,10 @@
       line-height: 1.75;
     }
 
+    .lede {
+      margin-bottom: 0.2rem;
+    }
+
     .list {
       margin-top: 2rem;
       border-top: 1px solid var(--line);
@@ -121,16 +125,54 @@
       background: #ffffff;
     }
 
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
     .item strong {
       display: block;
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
+      font-size: 1.02rem;
       color: var(--ink);
     }
 
     .item span {
       color: var(--muted);
       font-size: 0.94rem;
+    }
+
+    .item-meta {
+      margin-top: 0.25rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .download {
+      flex: 0 0 auto;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .download:hover {
+      background: var(--nav-bg);
+      transform: translateY(-1px);
+    }
+
+    .abstract-note {
+      margin-top: 0.55rem;
+      font-style: italic;
     }
 
     footer {
@@ -143,6 +185,10 @@
       .top {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .item-head {
+        flex-direction: column;
       }
 
       main {
@@ -164,19 +210,46 @@
 
     <main>
       <h1>Research</h1>
-      <p>
-        This page lists my working papers and research projects. I am currently updating this
-        section and will add full entries soon.
+      <p class="lede">
+        This page lists my working papers and current projects.
       </p>
 
-      <section class="list" aria-label="Research list placeholder">
+      <section class="list" aria-label="Research list">
         <article class="item">
-          <strong>Working Paper 1 (Title Coming Soon)</strong>
-          <span>Short abstract and links will be added here.</span>
+          <div class="item-head">
+            <div>
+              <strong>The Long(er) Term Effects of Promotions</strong>
+              <p class="item-meta">Working Paper</p>
+            </div>
+            <a class="download" href="longer_term_effect_promotions.pdf" target="_blank" rel="noopener">Download PDF</a>
+          </div>
+          <span>
+            This paper studies how internal promotions shape wages over subsequent employer-to-employer
+            (E2E) moves and unemployment-to-employer (U2E) transitions. Using panel data from the
+            National Longitudinal Survey of Youth 1979 (NLSY79), I estimate event-study wage dynamics
+            around promotions and track post-promotion wage changes across labor-market transitions. I
+            find that promotions raise wages by about 17% on average and are followed by a sustained
+            acceleration in wage growth. Promotion-induced wage gains largely survive E2E moves, but are
+            selectively undone after unemployment: workers with a prior promotion experience an average
+            12% wage loss upon re-employment, while otherwise similar non-promoted workers exhibit no
+            average wage loss. Moreover, wage losses for promoted workers increase sharply with
+            unemployment duration (about 0.97 percentage-points per month), compared with a much flatter
+            profile for non-promoted workers (about 0.43 percentage-points per month). To interpret these
+            facts, I develop a model of promotions with asymmetric learning in which the incumbent firm
+            observes worker performance, while the outside market infers ability from coarse, publicly
+            observed career outcomes (promotion, retention, and unemployment duration). In simulations,
+            the model reproduces the differential wage responses to U2E transitions while still matching
+            the immediate impact of promotions on wages.
+          </span>
         </article>
         <article class="item">
-          <strong>Work in Progress</strong>
-          <span>Project details and timeline will be posted here.</span>
+          <div class="item-head">
+            <div>
+              <strong>Pension Plan Design and Worker Mobility: Evidence from LEHD, Form 5500, and Summary Plan Descriptions</strong>
+              <p class="item-meta">Work in Progress</p>
+            </div>
+          </div>
+          <span>This project is in progress. Details will be added here as the paper develops.</span>
         </article>
       </section>
 
