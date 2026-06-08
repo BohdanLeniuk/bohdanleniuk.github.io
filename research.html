@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | Bohdan Leniuk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f6ef;
+      --panel: #fffef8;
+      --ink: #1f2a24;
+      --muted: #5c6a62;
+      --accent: #1f6f50;
+      --line: #dae3d8;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Manrope', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 10%, rgba(31,111,80,0.1), transparent 26%),
+        radial-gradient(circle at 92% 85%, rgba(31,111,80,0.08), transparent 24%),
+        var(--bg);
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .name {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    main {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(16, 36, 29, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 0.85rem;
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 66ch;
+      line-height: 1.75;
+    }
+
+    .list {
+      margin-top: 2rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .item {
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #ffffff;
+    }
+
+    .item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--ink);
+    }
+
+    .item span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    footer {
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 640px) {
+      .top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      main {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="name" href="index.html">Bohdan Leniuk</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html" aria-current="page">Research</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Research</h1>
+      <p>
+        This page lists my working papers and research projects. I am currently updating this
+        section and will add full entries soon.
+      </p>
+
+      <section class="list" aria-label="Research list placeholder">
+        <article class="item">
+          <strong>Working Paper 1 (Title Coming Soon)</strong>
+          <span>Short abstract and links will be added here.</span>
+        </article>
+        <article class="item">
+          <strong>Work in Progress</strong>
+          <span>Project details and timeline will be posted here.</span>
+        </article>
+      </section>
+
+      <footer>
+        Last updated: June 2026
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
