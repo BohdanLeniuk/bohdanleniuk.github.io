@@ -106,12 +106,16 @@
       line-height: 1.75;
     }
 
-    .lede {
-      margin-bottom: 0.2rem;
+    h2 {
+      margin: 1.6rem 0 0.8rem;
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      line-height: 1.2;
+      font-weight: 600;
     }
 
     .list {
-      margin-top: 2rem;
+      margin-top: 0;
       border-top: 1px solid var(--line);
       padding-top: 1.25rem;
       display: grid;
@@ -142,14 +146,6 @@
     .item span {
       color: var(--muted);
       font-size: 0.94rem;
-    }
-
-    .item-meta {
-      margin-top: 0.25rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent);
     }
 
     .download {
@@ -203,6 +199,7 @@
       <a class="name" href="index.html">Bohdan Leniuk</a>
       <nav>
         <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
         <a href="research.html" aria-current="page">Research</a>
         <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
@@ -210,16 +207,13 @@
 
     <main>
       <h1>Research</h1>
-      <p class="lede">
-        This page lists my working papers and current projects.
-      </p>
 
-      <section class="list" aria-label="Research list">
+      <h2>Working Papers</h2>
+      <section class="list" aria-label="Working papers">
         <article class="item">
           <div class="item-head">
             <div>
               <strong>The Long(er) Term Effects of Promotions</strong>
-              <p class="item-meta">Working Paper</p>
             </div>
             <a class="download" href="longer_term_effect_promotions.pdf" target="_blank" rel="noopener">Download PDF</a>
           </div>
@@ -242,11 +236,14 @@
             the immediate impact of promotions on wages.
           </span>
         </article>
+      </section>
+
+      <h2>Work in Progress</h2>
+      <section class="list" aria-label="Work in progress">
         <article class="item">
           <div class="item-head">
             <div>
               <strong>Pension Plan Design and Worker Mobility: Evidence from LEHD, Form 5500, and Summary Plan Descriptions</strong>
-              <p class="item-meta">Work in Progress</p>
             </div>
           </div>
           <span>This project is in progress. Details will be added here as the paper develops.</span>

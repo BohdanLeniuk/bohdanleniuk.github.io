@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bohdan Leniuk</title>
+  <title>About Me | Bohdan Leniuk</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -29,16 +29,15 @@
       font-family: var(--sans);
       color: var(--ink);
       background:
-        radial-gradient(circle at 14% 12%, rgba(43,79,62,0.12), transparent 30%),
-        radial-gradient(circle at 86% 83%, rgba(43,79,62,0.1), transparent 26%),
+        radial-gradient(circle at 10% 12%, rgba(43,79,62,0.12), transparent 28%),
+        radial-gradient(circle at 90% 82%, rgba(43,79,62,0.08), transparent 24%),
         var(--bg);
-      animation: fadeIn 0.4s ease;
     }
 
     .wrap {
-      max-width: 980px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 2.5rem 1.25rem 3.2rem;
+      padding: 2.5rem 1.25rem 3rem;
     }
 
     .top {
@@ -46,7 +45,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
     }
 
     .name {
@@ -88,68 +87,41 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 22px;
-      padding: 2rem;
+      padding: 2.1rem;
       box-shadow: 0 10px 25px rgba(16, 36, 29, 0.08);
     }
 
-    .hero {
+    .sections {
       display: grid;
-      grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
-      gap: 2rem;
-      align-items: start;
+      gap: 1.25rem;
     }
 
-    .photo-wrap {
-      width: 100%;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      overflow: hidden;
-      background: #f4f7f2;
-      box-shadow: 0 7px 18px rgba(18, 31, 25, 0.1);
-      animation: rise 0.5s ease;
+    .section {
+      padding-top: 1.35rem;
+      border-top: 1px solid var(--line);
     }
 
-    .photo-wrap img {
-      width: 100%;
-      display: block;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
+    .section:first-child {
+      padding-top: 0;
+      border-top: none;
     }
 
-    .bio {
-      animation: rise 0.6s ease;
-    }
-
-    h1 {
-      margin: 0 0 0.9rem;
+    h2 {
+      margin: 0 0 0.8rem;
       font-family: var(--serif);
-      font-size: clamp(2rem, 4.2vw, 2.9rem);
-      line-height: 1.12;
+      font-size: 1.35rem;
       font-weight: 600;
     }
 
-    .intro {
+    .section p {
       margin: 0;
-      max-width: 62ch;
-      font-size: 1rem;
-      line-height: 1.78;
+      max-width: 72ch;
       color: var(--muted);
+      line-height: 1.85;
     }
 
-    .bio-note {
+    .section p + p {
       margin-top: 1rem;
-      font-size: 0.93rem;
-      color: var(--muted);
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
 
     @media (max-width: 640px) {
@@ -161,15 +133,6 @@
       main {
         padding: 1.6rem;
       }
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 1.25rem;
-      }
-
-      .photo-wrap {
-        max-width: 320px;
-      }
     }
   </style>
 </head>
@@ -178,31 +141,46 @@
     <header class="top">
       <a class="name" href="index.html">Bohdan Leniuk</a>
       <nav>
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="about.html">About Me</a>
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About Me</a>
         <a href="research.html">Research</a>
         <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero" aria-label="Profile section">
-        <div class="photo-wrap">
-          <img src="headshot.jpeg" alt="Headshot of Bohdan Leniuk" />
-        </div>
-        <div class="bio">
-          <h1>Bohdan Leniuk</h1>
-          <p class="intro">
-            I am a fifth year Ph.D. candidate in economics at the University of Georgia and 
-            will be on the academic job market during the 2026-2027 cycle.
+      <div class="sections">
+        <section class="section" aria-labelledby="research-statement">
+          <h2 id="research-statement">Research</h2>
+          <p>
+            My research statement can begin with a broad description of the economic questions that
+            motivate my work, the literatures I contribute to, and the empirical or theoretical
+            tools I rely on. This is a good place to explain how my current projects fit together
+            and why those questions matter for labor markets, macroeconomics, or public policy.
           </p>
-          <p class="bio-note">
-            I study both macroeconomics and labor economics. My job market paper investigates
-            the long-term conequences of recieving a promotion and uses this setting to 
-            explore effect of policy on sorting in the labor market. 
+          <p>
+            A second paragraph can summarize the agenda I want to pursue over the next several
+            years. For example, I may want to explain how my job market paper connects to future
+            work on worker mobility, firm behavior, information frictions, or policy design, and
+            how these projects build a coherent research portfolio.
           </p>
-        </div>
-      </section>
+        </section>
+
+        <section class="section" aria-labelledby="personal-statement">
+          <h2 id="personal-statement">Personal</h2>
+          <p>
+            My personal statement can include a short account of my background, how I became
+            interested in economics, and the experiences that shaped my academic path. This section
+            can be more conversational than the research statement and can help readers understand
+            the perspective I bring to my work.
+          </p>
+          <p>
+            I may also want to add a few lines about interests outside of research, teaching, or
+            campus life. This is a useful place for personal details that make the page feel more
+            human while still staying professional and concise.
+          </p>
+        </section>
+      </div>
     </main>
   </div>
 </body>
