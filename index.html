@@ -246,6 +246,51 @@
 
     .cv-block:first-of-type .cv-section-title { margin-top: 0; }
 
+    /* ── PDF Viewer ── */
+    .pdf-viewer-wrap {
+      margin-top: 3rem;
+    }
+
+    .pdf-viewer-wrap .cv-section-title {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .pdf-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .pdf-download {
+      font-size: 0.82rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      padding: 0.5rem 1.2rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .pdf-download:hover {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .pdf-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .pdf-embed {
+      width: 100%;
+      height: 780px;
+      border: 1px solid var(--rule);
+      display: block;
+    }
+
     /* ── Contact ── */
     .contact-grid {
       display: grid;
@@ -474,6 +519,23 @@
             <span>LaTeX, Git, ArcGIS</span>
           </div>
         </div>
+      </div>
+
+      <!-- PDF Viewer -->
+      <div class="pdf-viewer-wrap">
+        <p class="cv-section-title">Full CV (PDF)</p>
+        <div class="pdf-actions">
+          <a href="cv.pdf" download class="pdf-download">Download PDF →</a>
+          <span class="pdf-note">Can't see the PDF? <a href="cv.pdf" target="_blank" style="color:var(--accent)">Open in new tab</a></span>
+        </div>
+        <iframe
+          src="cv.pdf"
+          class="pdf-embed"
+          title="Curriculum Vitae PDF">
+          <p>Your browser does not support embedded PDFs.
+            <a href="cv.pdf" target="_blank">Click here to view the CV.</a>
+          </p>
+        </iframe>
       </div>
 
     </div>
