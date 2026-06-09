@@ -148,6 +148,58 @@
       font-size: 0.94rem;
     }
 
+    .abstract-toggle {
+      margin-top: 0.1rem;
+    }
+
+    .abstract-toggle summary {
+      list-style: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.75;
+      user-select: none;
+      width: fit-content;
+    }
+
+    .abstract-toggle summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .abstract-toggle summary::after {
+      content: " \25BE";
+      font-size: 0.82rem;
+    }
+
+    .abstract-toggle[open] summary::after {
+      content: " \25B4";
+    }
+
+    .abstract-body {
+      margin-top: 0.55rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.75;
+      max-width: 66ch;
+    }
+
+    .collapse-inline {
+      display: inline;
+      margin-left: 0.2rem;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      line-height: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .collapse-inline:hover,
+    .abstract-toggle summary:hover {
+      color: var(--accent);
+    }
+
     .draft-note {
       flex: 0 0 auto;
       color: var(--muted);
@@ -205,24 +257,28 @@
             </div>
             <span class="draft-note">Draft forthcoming</span>
           </div>
-          <span>
-            This paper studies how internal promotions shape wages over subsequent employer-to-employer
-            (E2E) moves and unemployment-to-employer (U2E) transitions. Using panel data from the
-            National Longitudinal Survey of Youth 1979 (NLSY79), I estimate event-study wage dynamics
-            around promotions and track post-promotion wage changes across labor-market transitions. I
-            find that promotions raise wages by about 17% on average and are followed by a sustained
-            acceleration in wage growth. Promotion-induced wage gains largely survive E2E moves, but are
-            selectively undone after unemployment: workers with a prior promotion experience an average
-            12% wage loss upon re-employment, while otherwise similar non-promoted workers exhibit no
-            average wage loss. Moreover, wage losses for promoted workers increase sharply with
-            unemployment duration (about 0.97 percentage points per month), compared with a much flatter
-            profile for non-promoted workers (about 0.43 percentage points per month). To interpret these
-            facts, I develop a model of promotions with asymmetric learning in which the incumbent firm
-            observes worker performance, while the outside market infers ability from coarse, publicly
-            observed career outcomes (promotion, retention, and unemployment duration). In simulations,
-            the model reproduces the differential wage responses to U2E transitions while still matching
-            the immediate impact of promotions on wages.
-          </span>
+          <details class="abstract-toggle">
+            <summary>Abstract</summary>
+            <div class="abstract-body">
+              This paper studies how internal promotions shape wages over subsequent employer-to-employer
+              (E2E) moves and unemployment-to-employer (U2E) transitions. Using panel data from the
+              National Longitudinal Survey of Youth 1979 (NLSY79), I estimate event-study wage dynamics
+              around promotions and track post-promotion wage changes across labor-market transitions. I
+              find that promotions raise wages by about 17% on average and are followed by a sustained
+              acceleration in wage growth. Promotion-induced wage gains largely survive E2E moves, but are
+              selectively undone after unemployment: workers with a prior promotion experience an average
+              12% wage loss upon re-employment, while otherwise similar non-promoted workers exhibit no
+              average wage loss. Moreover, wage losses for promoted workers increase sharply with
+              unemployment duration (about 0.97 percentage points per month), compared with a much flatter
+              profile for non-promoted workers (about 0.43 percentage points per month). To interpret these
+              facts, I develop a model of promotions with asymmetric learning in which the incumbent firm
+              observes worker performance, while the outside market infers ability from coarse, publicly
+              observed career outcomes (promotion, retention, and unemployment duration). In simulations,
+              the model reproduces the differential wage responses to U2E transitions while still matching
+              the immediate impact of promotions on wages.
+              <button class="collapse-inline" type="button" aria-label="Collapse abstract">&#9652;</button>
+            </div>
+          </details>
         </article>
       </section>
 
@@ -234,7 +290,6 @@
               <strong>Pension Plan Design and Worker Mobility: Evidence from LEHD, Form 5500, and Summary Plan Descriptions</strong>
             </div>
           </div>
-          <span>This project is in progress. Details will be added here as the paper develops.</span>
         </article>
       </section>
 
@@ -243,5 +298,16 @@
       </footer>
     </main>
   </div>
+
+  <script>
+    document.querySelectorAll('.collapse-inline').forEach((button) => {
+      button.addEventListener('click', () => {
+        const details = button.closest('details');
+        if (details) {
+          details.open = false;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
