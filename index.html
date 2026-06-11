@@ -36,9 +36,9 @@
     }
 
     .wrap {
-      max-width: 980px;
+      width: min(96vw, 1480px);
       margin: 0 auto;
-      padding: 2.5rem 1.25rem 3.2rem;
+      padding: 2.5rem clamp(1rem, 2vw, 2.5rem) 3.2rem;
     }
 
     .top {
@@ -88,14 +88,14 @@
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 22px;
-      padding: 2rem;
+      padding: clamp(1.8rem, 1.4vw + 1.2rem, 3rem);
       box-shadow: 0 10px 25px rgba(16, 36, 29, 0.08);
     }
 
     .hero {
       display: grid;
-      grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
-      gap: 2rem;
+      grid-template-columns: clamp(220px, 24vw, 360px) minmax(0, 1fr);
+      gap: clamp(1.5rem, 2vw, 3rem);
       align-items: start;
     }
 
@@ -123,23 +123,29 @@
     h1 {
       margin: 0 0 0.9rem;
       font-family: var(--serif);
-      font-size: clamp(2rem, 4.2vw, 2.9rem);
+      font-size: clamp(2rem, 2.1vw + 1.2rem, 3.3rem);
       line-height: 1.12;
       font-weight: 600;
     }
 
     .intro {
       margin: 0;
-      max-width: 62ch;
-      font-size: 1rem;
+      max-width: 68ch;
+      font-size: clamp(1rem, 0.35vw + 0.95rem, 1.13rem);
       line-height: 1.78;
       color: var(--muted);
     }
 
     .bio-note {
       margin-top: 1rem;
-      font-size: 0.93rem;
+      font-size: clamp(0.93rem, 0.22vw + 0.88rem, 1.02rem);
       color: var(--muted);
+    }
+
+    @media (min-width: 1400px) {
+      .hero {
+        grid-template-columns: clamp(260px, 24vw, 400px) minmax(0, 1fr);
+      }
     }
 
     @keyframes rise {
@@ -193,7 +199,7 @@
           <h1>Bohdan Leniuk</h1>
           <p class="intro">
             I am a fifth year Ph.D. candidate in economics at the University of Georgia and 
-            will be on the academic job market during the 2026-2027 cycle.
+            will be on the job market during the 2026-2027 cycle.
           </p>
           <p class="bio-note">
             I study both macroeconomics and labor economics. My job market paper investigates
