@@ -30,3 +30,22 @@ build/
 .tmp/
 temp/
 coverage/
+
+# LaTeX build artifacts (keep only .tex and .pdf)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+*.nav
+*.snm
+*.vrb
