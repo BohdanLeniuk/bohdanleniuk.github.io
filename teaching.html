@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching | Bohdan Leniuk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #eef2eb;
+      --panel: #fbfcf9;
+      --ink: #1f2a24;
+      --muted: #5a665e;
+      --accent: #2b4f3e;
+      --line: #d7ded4;
+      --nav-bg: #e3e8e0;
+      --nav-active: #cfd8cd;
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Manrope', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(43,79,62,0.12), transparent 26%),
+        radial-gradient(circle at 90% 88%, rgba(43,79,62,0.1), transparent 24%),
+        var(--bg);
+    }
+
+    .wrap {
+      width: min(96vw, 1360px);
+      margin: 0 auto;
+      padding: 2.5rem clamp(1rem, 2vw, 2.5rem) 3rem;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .name {
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #4b5650;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: var(--nav-bg);
+      border: 1px solid transparent;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      background: var(--nav-active);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    main {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(1.7rem, 1.2vw + 1.2rem, 2.8rem);
+      box-shadow: 0 10px 25px rgba(16, 36, 29, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 0.9rem;
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 1.8vw + 1.2rem, 3rem);
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      max-width: 74ch;
+      line-height: 1.75;
+      font-size: clamp(0.97rem, 0.22vw + 0.92rem, 1.04rem);
+    }
+
+    .sections {
+      display: grid;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .section {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #ffffff;
+      padding: clamp(1rem, 0.6vw + 0.95rem, 1.35rem);
+    }
+
+    .section h2 {
+      margin: 0 0 0.85rem;
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 0.45vw + 1.05rem, 1.65rem);
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    .section-note {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
+    .teaching-item {
+      display: grid;
+      gap: 0.45rem;
+      padding: 1rem 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .teaching-item:first-of-type {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .teaching-item strong {
+      font-size: 1.04rem;
+      color: var(--ink);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 0.25rem;
+    }
+
+    .pdf-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      color: #ffffff;
+      background: var(--accent);
+      padding: 0.62rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .pdf-link:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .placeholder-list {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.96rem;
+    }
+
+    .placeholder-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .placeholder-note {
+      margin-top: 0.9rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 640px) {
+      .top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      main {
+        padding: 1.5rem;
+      }
+
+      .section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a class="name" href="index.html">Bohdan Leniuk</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="teaching.html" aria-current="page">Teaching</a>
+        <a href="supplementary/cv.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Teaching</h1>
+
+      <div class="sections">
+        <section class="section" aria-labelledby="ior-heading">
+          <h2 id="ior-heading">Instructor of Record</h2>
+
+          <article class="teaching-item">
+            <strong>ECON 2105: Principles of Macroeconomics</strong>
+            <div class="meta">Summer Short I 2025, University of Georgia</div>
+            <div class="link-row">
+              <a class="pdf-link" href="supplementary/course_evals_template.pdf" target="_blank" rel="noopener">Download feedback PDF</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="section" aria-labelledby="ta-heading">
+          <h2 id="ta-heading">Teaching Assistant</h2>
+
+          <article class="teaching-item">
+            <strong>ECON 8020: Microeconomic Theory II (PhD)</strong>
+            <div class="meta">Spring 2024 and Spring 2025</div>
+          </article>
+
+          <article class="teaching-item">
+            <strong>ECON 8010: Microeconomic Theory I (PhD)</strong>
+            <div class="meta">Fall 2024</div>
+          </article>
+
+          <article class="teaching-item">
+            <strong>ECON 4020: Intermediate Macroeconomics</strong>
+            <div class="meta">Fall 2022-Present</div>
+          </article>
+
+          <article class="teaching-item">
+            <strong>EMBA 7010: Economic Analysis (MBA)</strong>
+            <div class="meta">Spring 2023, Fall 2024, Fall 2025, Spring 2026</div>
+          </article>
+
+          <article class="teaching-item">
+            <strong>ECON 2105H: Honors Principles of Macroeconomics</strong>
+            <div class="meta">Summer 2023</div>
+          </article>
+
+          <article class="teaching-item">
+            <strong>ECON 6760: Time Series Analysis</strong>
+            <div class="meta">Spring 2023</div>
+          </article>
+
+          <article class="teaching-item">
+            <strong>ECON 4550: International Trade and Finance</strong>
+            <div class="meta">Spring 2023</div>
+          </article>
+
+          <article class="teaching-item">
+            <strong>ECON 4040: International Business Environment</strong>
+            <div class="meta">Fall 2022</div>
+          </article>
+
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
