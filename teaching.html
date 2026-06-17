@@ -92,14 +92,14 @@
     }
 
     h1 {
-      margin: 0 0 0.9rem;
+      margin: 0 0 0.85rem;
       font-family: var(--serif);
       font-size: clamp(1.9rem, 1.8vw + 1.2rem, 3rem);
       line-height: 1.2;
       font-weight: 600;
     }
 
-    .lede {
+    p {
       margin: 0;
       color: var(--muted);
       max-width: 74ch;
@@ -107,47 +107,46 @@
       font-size: clamp(0.97rem, 0.22vw + 0.92rem, 1.04rem);
     }
 
-    .sections {
-      display: grid;
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .section {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: #ffffff;
-      padding: clamp(1rem, 0.6vw + 0.95rem, 1.35rem);
-    }
-
-    .section h2 {
-      margin: 0 0 0.85rem;
+    h2 {
+      margin: 1.6rem 0 0.8rem;
       font-family: var(--serif);
-      font-size: clamp(1.25rem, 0.45vw + 1.05rem, 1.65rem);
+      font-size: clamp(1.3rem, 0.45vw + 1.05rem, 1.7rem);
       line-height: 1.2;
       font-weight: 600;
     }
 
-    .section-note {
-      margin: 0 0 1rem;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.96rem;
+    .list {
+      margin-top: 0;
+      border-top: 1px solid var(--line);
+      padding-top: 1.25rem;
+      display: grid;
+      gap: 1rem;
     }
 
-    .teaching-item {
+    .item {
+      padding: clamp(1rem, 0.45vw + 0.9rem, 1.3rem) clamp(1.1rem, 0.5vw + 1rem, 1.45rem);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #ffffff;
+    }
+
+
+    .item strong {
+      font-size: 1.04rem;
+      color: var(--ink);
+    }
+
+    .course {
       display: grid;
       gap: 0.45rem;
-      padding: 1rem 0 0;
-      border-top: 1px solid var(--line);
+      padding: 0.75rem 0;
     }
 
-    .teaching-item:first-of-type {
+    .course:first-child {
       padding-top: 0;
-      border-top: 0;
     }
 
-    .teaching-item strong {
+    .course strong {
       font-size: 1.04rem;
       color: var(--ink);
     }
@@ -186,25 +185,6 @@
       filter: brightness(1.04);
     }
 
-    .placeholder-list {
-      margin: 0;
-      padding-left: 1.15rem;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 0.96rem;
-    }
-
-    .placeholder-list li + li {
-      margin-top: 0.35rem;
-    }
-
-    .placeholder-note {
-      margin-top: 0.9rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-      font-style: italic;
-    }
-
     @media (max-width: 640px) {
       .top {
         flex-direction: column;
@@ -236,64 +216,63 @@
     <main>
       <h1>Teaching</h1>
 
-      <div class="sections">
-        <section class="section" aria-labelledby="ior-heading">
-          <h2 id="ior-heading">Instructor of Record</h2>
-
-          <article class="teaching-item">
+      <h2>Instructor of Record</h2>
+      <section class="list" aria-label="Instructor of Record">
+        <article class="item">
+          <div class="course">
             <strong>ECON 2105: Principles of Macroeconomics</strong>
             <div class="meta">Summer Short I 2025, University of Georgia</div>
             <div class="link-row">
               <a class="pdf-link" href="supplementary/course_evals_template.pdf" target="_blank" rel="noopener">Download feedback PDF</a>
             </div>
-          </article>
-        </section>
+          </div>
+        </article>
+      </section>
 
-        <section class="section" aria-labelledby="ta-heading">
-          <h2 id="ta-heading">Teaching Assistant</h2>
-
-          <article class="teaching-item">
+      <h2>Teaching Assistant</h2>
+      <section class="list" aria-label="Teaching Assistant">
+        <article class="item">
+          <div class="course">
             <strong>ECON 8020: Microeconomic Theory II (PhD)</strong>
             <div class="meta">Spring 2024 and Spring 2025</div>
-          </article>
+          </div>
 
-          <article class="teaching-item">
+          <div class="course">
             <strong>ECON 8010: Microeconomic Theory I (PhD)</strong>
             <div class="meta">Fall 2024</div>
-          </article>
+          </div>
 
-          <article class="teaching-item">
+          <div class="course">
             <strong>ECON 4020: Intermediate Macroeconomics</strong>
             <div class="meta">Fall 2022-Present</div>
-          </article>
+          </div>
 
-          <article class="teaching-item">
+          <div class="course">
             <strong>EMBA 7010: Economic Analysis (MBA)</strong>
             <div class="meta">Spring 2023, Fall 2024, Fall 2025, Spring 2026</div>
-          </article>
+          </div>
 
-          <article class="teaching-item">
+          <div class="course">
             <strong>ECON 2105H: Honors Principles of Macroeconomics</strong>
             <div class="meta">Summer 2023</div>
-          </article>
+          </div>
 
-          <article class="teaching-item">
+          <div class="course">
             <strong>ECON 6760: Time Series Analysis</strong>
             <div class="meta">Spring 2023</div>
-          </article>
+          </div>
 
-          <article class="teaching-item">
+          <div class="course">
             <strong>ECON 4550: International Trade and Finance</strong>
             <div class="meta">Spring 2023</div>
-          </article>
+          </div>
 
-          <article class="teaching-item">
+          <div class="course">
             <strong>ECON 4040: International Business Environment</strong>
             <div class="meta">Fall 2022</div>
-          </article>
-
-        </section>
-      </div>
+          </div>
+        </article>
+      </section>
     </main>
   </div>
 </body>
