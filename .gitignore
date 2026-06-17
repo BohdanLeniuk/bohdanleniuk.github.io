@@ -30,6 +30,7 @@ build/
 .tmp/
 temp/
 coverage/
+*.xlsx
 
 # LaTeX build artifacts (keep only .tex and .pdf)
 *.aux
