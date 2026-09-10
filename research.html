@@ -206,6 +206,11 @@
       color: var(--muted);
       font-size: 0.85rem;
       font-style: italic;
+      text-decoration: none;
+    }
+
+    .draft-note:hover {
+      color: var(--accent);
     }
 
     .abstract-note {
@@ -255,29 +260,27 @@
         <article class="item">
           <div class="item-head">
             <div>
-              <strong>The Long(er) Term Effects of Promotions</strong>
+              <strong>Promotions, Unemployment, and Labor Market Sorting Under Asymmetric Information</strong>
             </div>
-            <span class="draft-note">Draft forthcoming</span>
+            <a class="draft-note" href="paper/promotions_unemployment_sorting.pdf" target="_blank" rel="noopener">Download</a>
           </div>
           <details class="abstract-toggle">
             <summary>Abstract</summary>
             <div class="abstract-body">
-              This paper studies how internal promotions shape wages over subsequent employer-to-employer
-              (E2E) moves and unemployment-to-employer (U2E) transitions. Using panel data from the
-              National Longitudinal Survey of Youth 1979 (NLSY79), I estimate event-study wage dynamics
-              around promotions and track post-promotion wage changes across labor-market transitions. I
-              find that promotions raise wages by about 17% on average and are followed by a sustained
-              acceleration in wage growth. Promotion-induced wage gains largely survive E2E moves, but are
-              selectively undone after unemployment: workers with a prior promotion experience an average
-              12% wage loss upon re-employment, while otherwise similar non-promoted workers exhibit no
-              average wage loss. Moreover, wage losses for promoted workers increase sharply with
-              unemployment duration (about 0.97 percentage points per month), compared with a much flatter
-              profile for non-promoted workers (about 0.43 percentage points per month). To interpret these
-              facts, I develop a model of promotions with asymmetric learning in which the incumbent firm
-              observes worker performance, while the outside market infers ability from coarse, publicly
-              observed career outcomes (promotion, retention, and unemployment duration). In simulations,
-              the model reproduces the differential wage responses to U2E transitions while still matching
-              the immediate impact of promotions on wages.
+              This paper studies how promotions and unemployment shape labor-market sorting and wages. 
+              Using the 1979 National Longitudinal Survey of Youth (NLSY79), I show that promotions amplify 
+              the wage losses associated with unemployment spells: previously promoted workers experience 
+              larger wage losses upon re-employment, and those losses increase as the spell prolongs, even 
+              conditional on pre-displacement wage and tenure. I interpret these facts through a structural 
+              model of promotions and job search in which firms learn about worker ability from a worker's 
+              history of promotions and unemployment spells. When hiring a worker out of unemployment, firms 
+              use this information to assign him a position. Because unemployment duration is a noisy signal 
+              of ability, the model implies that unemployment can serve as a shock to labor-market sorting 
+              through which firms may either correct an erroneous promotion or incorrectly move capable 
+              workers back down the job-ladder. Because UI benefits alter search behavior, they also change 
+              how much an unemployment spell reveals about a worker. Relative to a flat benefit profile, UI 
+              plans that tie benefits to past wages worsen sorting and lower aggregate output, while policies 
+              that target benefits toward low-ability workers improve sorting and raise output.
               <button class="collapse-inline" type="button" aria-label="Collapse abstract">&#9652;</button>
             </div>
           </details>
