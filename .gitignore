@@ -50,3 +50,8 @@ coverage/
 *.nav
 *.snm
 *.vrb
+*.synctex(busy)
+
+# Personal statement PDF not for publication
+Seth_M_Smith_TeaStatement.pdf
+Seth_M_Smith_TeachStatement.pdf
