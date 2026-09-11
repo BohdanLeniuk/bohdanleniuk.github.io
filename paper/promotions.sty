@@ -1,0 +1,110 @@
+% ============================================================================
+% promotions.sty — Shared preamble for "The Long(er) Term Effects of Promotions"
+% ============================================================================
+%
+% PURPOSE:
+%   Centralizes every \usepackage, counter format, and theorem definition
+%   that was previously copy-pasted across 7+ .tex files.  Each document
+%   now needs only:
+%       \documentclass[11pt]{article}
+%       \usepackage{promotions}
+%       \begin{document} ...
+%
+% WHAT THIS REPLACES:
+%   The block of ~15 \usepackage lines, the \renewcommand counter patterns,
+%   the \numberwithin lines, and the \newtheorem block that appeared (with
+%   slight inconsistencies) in:
+%       Full Paper.tex, Empirics.tex, Model.tex, Introduction.tex,
+%       Appendix.tex, Abstract.tex, Model Fit and Results.tex,
+%       and the Midwest Macro submission.
+%
+% DOWNSTREAM IMPACT:
+%   Any .tex file that loads this package will automatically have every
+%   package and definition it needs.  Section-specific files (Empirics,
+%   Model, etc.) that are compiled standalone will behave identically to
+%   before; the only change is where the preamble lives.
+%
+% MAINTENANCE:
+%   If you add a new package or theorem environment for the paper, add it
+%   here once rather than in every .tex file.
+%
+% ============================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{promotions}[2026/03/04 Shared preamble for Promotions project]
+
+
+% ============================================================================
+% 1. CORE PACKAGES — loaded by every document in the project
+% ============================================================================
+
+% --- Graphics & Figures ---
+\RequirePackage{graphicx}       % \includegraphics
+\RequirePackage{float}          % [H] placement for figures/tables
+\RequirePackage{subcaption}     % Side-by-side subfigures
+\RequirePackage{placeins}       % \FloatBarrier
+
+% --- Tables ---
+\RequirePackage{booktabs}       % \toprule, \midrule, \bottomrule
+\RequirePackage{adjustbox}      % Resize wide tables to fit \linewidth
+\RequirePackage{array}          % Extended column specifications
+\RequirePackage{threeparttable} % for adding notes to tables
+
+% --- Math ---
+\RequirePackage{amsmath}        % align, equation*, \text{}, etc.
+\RequirePackage{amssymb}        % \mathbb, extra math symbols
+\RequirePackage{amsthm}         % Theorem environments
+
+% --- Typography & Layout ---
+\RequirePackage{geometry}       % Page margins
+\RequirePackage{dirtytalk}      % \say{...} for inline quotes
+
+% --- Author & Affiliation ---
+\RequirePackage{authblk}        % Multi-author/affiliation formatting
+
+% --- TikZ (for belief-evolution diagrams) ---
+\RequirePackage{tikz-cd}
+\usetikzlibrary{decorations.pathreplacing}
+
+% --- Bibliography ---
+\RequirePackage{natbib}         % \citet, \citep, \bibliographystyle{aer}
+\RequirePackage{hyperref}       % Clickable cross-references and URLs
+
+
+% ============================================================================
+% 2. CROSS-REFERENCING — section-prefixed counters
+% ============================================================================
+%
+% Makes figures, tables, and equations numbered as  Section.Number
+% (e.g., Figure 2.3, Table 3.1, Equation 4.2).
+% These lines were in Full Paper, Empirics, Model, and the Midwest
+% submission but missing from Abstract, Introduction, and Model Fit.
+%
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+
+
+% ============================================================================
+% 3. THEOREM ENVIRONMENTS
+% ============================================================================
+%
+% All numbered within the current section (e.g., Theorem 3.1).
+% Previously defined only in Full Paper.tex; now available everywhere.
+%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ============================================================================
+% END OF PACKAGE
+% ============================================================================
